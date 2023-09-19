@@ -21,20 +21,22 @@ jobs:
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-
-      # Upload files
-      - name: Commit files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git pull
-          git status
-          git add -f pdf/*
-          git add -f webslides/*
-          git add -f index.html
-          git commit -m "Generate slides"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    # Upload files
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git pull
+        git status
+        git add -f pdf/*
+        git add -f webslides/*
+        git add -f index.html
+        git commit -m "Generate slides"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
