@@ -14,7 +14,9 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           /build/process.sh
-          cp index.html public
+          ls -al
+          ls /build
+          cp /build/index.html public
       - uses: actions/upload-artifact@master
         with:
           name: public
