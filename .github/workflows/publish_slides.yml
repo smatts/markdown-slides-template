@@ -37,6 +37,7 @@ jobs:
           cp public/*.html webslides/
           mkdir -p webslides/preview-images
           cp public/*.png webslides/preview-images
+          cp public/index.html .
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git pull
