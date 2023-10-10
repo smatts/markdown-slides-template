@@ -1,6 +1,11 @@
 # Markdown Slides Template
 
 This is a template for slides created with Markdown using [Marp CLI](https://github.com/marp-team/marp-cli).
+It creates HTML and PDF slides and links them on an index page together with a preview image.
+
+You can view this index page here:
+
+* [Slides overview](https://smatts.github.io/markdown-slides-template/)
 
 ## How to use this template
 
